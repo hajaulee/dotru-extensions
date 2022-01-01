@@ -5,5 +5,12 @@
     "version": "0.0.3",
     "thumbnail": "https://raw.githubusercontent.com/hajaulee/dotru-extensions/main/icon/truyenqq/icon.png",
     "sourceCodeUrl": "https://raw.githubusercontent.com/hajaulee/dotru-extensions/main/extensions/vi/truyenqq.js"
+  },
+  {
+    "name": "HentaiVN",
+    "lang": "vi",
+    "version": "0.0.1",
+    "thumbnail": "https://raw.githubusercontent.com/hajaulee/dotru-extensions/main/icon/hentaivn/icon.png",
+    "sourceCodeUrl": "https://raw.githubusercontent.com/hajaulee/dotru-extensions/main/extensions/vi/hentaivn.js"
   }
 ]
