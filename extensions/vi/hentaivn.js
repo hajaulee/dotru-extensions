@@ -1,7 +1,7 @@
 function HentaiVN() {
 
   this.name = "HentaiVN";
-  this.version = "0.0.1";
+  this.version = "0.0.2";
   this.thumbnail = "https://raw.githubusercontent.com/hajaulee/dotru-extensions/main/icon/hentaivn/icon.png";
   this.lang = "vi";
   this.baseUrl = "https://hentaivn.tv";
