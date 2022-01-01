@@ -5,14 +5,14 @@ function HentaiVN() {
   this.thumbnail = "https://raw.githubusercontent.com/hajaulee/dotru-extensions/main/icon/hentaivn/icon.png";
   this.lang = "vi";
   this.baseUrl = "https://hentaivn.tv";
-  this.supportsLatest = true;
+  this.supportsLatest = false;
 
   this.headerBuilder = () => {
     return {}
   }
 
   // Popular
-  this.popularMangaRequest = (page) => `${this.baseUrl}//tieu-diem.html?page=${page}`;
+  this.popularMangaRequest = (page) => `${this.baseUrl}/?page=${page}`;
   this.popularMangaNextPageSelector = () => "ul.pagination > li:contains(Next)";
   this.popularMangaSelector = () => ".main > .block-left > .block-item > ul > li.item";
   this.popularMangaFromElement = (e) => {
@@ -23,7 +23,7 @@ function HentaiVN() {
   }
 
   // Latest
-  this.latestUpdatesRequest = (page) => `${this.baseUrl}//chap-moi.html?page=${page}`;
+  this.latestUpdatesRequest = (page) => `${this.baseUrl}/chap-moi.html?page=${page}`;
   this.latestUpdatesNextPageSelector = this.popularMangaNextPageSelector;
   this.latestUpdatesSelector = this.popularMangaSelector;
   this.latestUpdatesFromElement = this.popularMangaFromElement;
