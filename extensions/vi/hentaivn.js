@@ -1,5 +1,5 @@
-function HentaiVNX() {
-    this.name = "HentaiVNX";
+function HentaiVN() {
+    this.name = "HentaiVN";
     this.version = "0.0.6";
     this.thumbnail = "https://raw.githubusercontent.com/hajaulee/dotru-extensions/main/icon/hentaivn/icon.png";
     this.lang = "vi";
