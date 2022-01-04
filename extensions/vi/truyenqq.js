@@ -1,14 +1,16 @@
 function TruyenQQ() {
 
   this.name = "TruyenQQ";
-  this.version = "0.0.1";
+  this.version = "0.0.4";
   this.thumbnail = "https://raw.githubusercontent.com/hajaulee/dotru-extensions/main/icon/truyenqq/icon.png";
   this.lang = "vi";
   this.baseUrl = "https://truyenqqtop.com";
   this.supportsLatest = true;
 
   this.headerBuilder = () => {
-    return {}
+    return {
+      "Referer": this.baseUrl
+    }
   }
 
   // Popular
