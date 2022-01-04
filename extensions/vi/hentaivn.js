@@ -1,12 +1,14 @@
 function HentaiVN() {
     this.name = "HentaiVN";
-    this.version = "0.0.6";
+    this.version = "0.0.7";
     this.thumbnail = "https://raw.githubusercontent.com/hajaulee/dotru-extensions/main/icon/hentaivn/icon.png";
     this.lang = "vi";
     this.baseUrl = "https://hentaivn.moe";
     this.supportsLatest = true;
     this.headerBuilder = () => {
-        return {}
+        return {
+            "Referer": this.baseUrl
+        }
     }
     // Popular
     this.popularMangaRequest = (page) => `${this.baseUrl}/danh-sach.html?page=${page}`;
