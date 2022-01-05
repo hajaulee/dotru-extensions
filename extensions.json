@@ -12,5 +12,12 @@
     "version": "0.0.7",
     "thumbnail": "https://raw.githubusercontent.com/hajaulee/dotru-extensions/main/icon/hentaivn/icon.png",
     "sourceCodeUrl": "https://raw.githubusercontent.com/hajaulee/dotru-extensions/main/extensions/vi/hentaivn.js"
+  },
+  {
+    "name": "NetTruyen",
+    "lang": "vi",
+    "version": "0.0.1",
+    "thumbnail": "https://raw.githubusercontent.com/hajaulee/dotru-extensions/main/icon/nettruyen/icon.png",
+    "sourceCodeUrl": "https://raw.githubusercontent.com/hajaulee/dotru-extensions/main/extensions/vi/nettruyen.js"
   }
 ]
