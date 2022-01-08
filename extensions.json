@@ -19,5 +19,12 @@
     "version": "0.0.2",
     "thumbnail": "https://raw.githubusercontent.com/hajaulee/dotru-extensions/main/icon/nettruyen/icon.png",
     "sourceCodeUrl": "https://raw.githubusercontent.com/hajaulee/dotru-extensions/main/extensions/vi/nettruyen.js"
+  },
+  {
+    "name": "SenManga",
+    "lang": "ja",
+    "version": "0.0.1",
+    "thumbnail": "https://raw.githubusercontent.com/hajaulee/dotru-extensions/main/icon/senmanga/image.png",
+    "sourceCodeUrl": "https://raw.githubusercontent.com/hajaulee/dotru-extensions/main/extensions/ja/senmanga.js"
   }
 ]
