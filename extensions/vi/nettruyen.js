@@ -1,7 +1,7 @@
 function NetTruyen() {
 
     this.name = "NetTruyen";
-    this.version = "0.0.2";
+    this.version = "0.0.3";
     this.thumbnail = "https://raw.githubusercontent.com/hajaulee/dotru-extensions/main/icon/nettruyen/icon.png";
     this.lang = "vi";
     this.baseUrl = "http://www.nettruyengo.com";
@@ -42,7 +42,7 @@ function NetTruyen() {
     this.searchMangaSelector = () => "div.items div.item div.image a";
     this.searchMangaFromElement  = (e) => {
         const title = e.getAttribute("title");
-        const url = "https:" + e.getAttribute("href").replace("https:", "");
+        const url = addHttpsSchema(e.getAttribute("href"));
         const thumbnailUrl = imageOrNull(e.querySelector("img"));
         return {url, thumbnailUrl, title};
     }
@@ -68,7 +68,7 @@ function NetTruyen() {
     // Chapters
     this.chapterListSelector = () => "div.list-chapter li.row:not(.heading)";
     this.chapterFromElement = (element) => {
-        const url = "https:" + element.querySelector("a").getAttribute("href").replace("https:", "").replace("http:", "");
+        const url = addHttpsSchema(element.querySelector("a").getAttribute("href"));
         const name = element.querySelector("a").innerText.trim();
         const dateUpload = parseDate(element.querySelector("div.col-xs-4").innerText.trim());
         return {url, name, dateUpload}
@@ -79,7 +79,7 @@ function NetTruyen() {
     this.pageListParse = (document) => {
         const pages = [];
         document.querySelectorAll("div.page-chapter > img, li.blocks-gallery-item img").forEach((element, index) => {
-            const url = "https:" + imageOrNull(element).replace("https:", "");
+            const url = addHttpsSchema(imageOrNull(element));
             const name = "";
             pages.push({index, name, url });
         });
@@ -127,9 +127,13 @@ function NetTruyen() {
     const imageOrNull = (element) => {
       const srcAttrs = ["data-original", "data-src", "src"];
       for(let attr of srcAttrs){
-         if (element.getAttribute(attr)?.includes("//")) return "https:" + element.getAttribute(attr).replace("https:", "");
+         if (element.getAttribute(attr)?.includes("//")) return addHttpsSchema(element.getAttribute(attr));
       }
       return null;
+    }
+    
+    const addHttpsSchema = (strUrl) => {
+    	return strUrl.startsWith("//") ? ("https:" + strUrl) : strUrl;
     }
   
   }
