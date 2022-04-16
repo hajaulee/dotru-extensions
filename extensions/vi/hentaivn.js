@@ -1,6 +1,6 @@
 function HentaiVN() {
     this.name = "HentaiVN";
-    this.version = "0.0.7";
+    this.version = "0.0.8";
     this.thumbnail = "https://raw.githubusercontent.com/hajaulee/dotru-extensions/main/icon/hentaivn/icon.png";
     this.lang = "vi";
     this.baseUrl = "https://hentaivn.moe";
@@ -81,8 +81,21 @@ function HentaiVN() {
             status
         }
     }
+    
     // Chapters
+    this.chapterListParse = (doc) => {
+    	const bodyText = doc.body.innerText;
+   		const startPos = bodyText.indexOf("list-showchapter.php?");
+   		const endPos = bodyText.indexOf("\"", startPos);
+   		const chapterLink = this.baseUrl + "/" + bodyText.substring(startPos, endPos);
+   		const chapterData = this.httpGetSync(chapterLink);
+   		const parser = new DOMParser();
+		const htmlChapterDataDoc = parser.parseFromString(chapterData, 'text/html');
+    	return [...htmlChapterDataDoc.querySelectorAll('tr')].map(this.chapterFromElement);
+    }
+    /*
     this.chapterListSelector = () => ".page-info > table.listing > tbody > tr";
+    */
     this.chapterFromElement = (element) => {
         const parseDate = (dateString) => new Date(dateString.split("/").reverse().join('/')).getTime();
         const name = element.querySelector("a").querySelector("h2").innerText;
@@ -94,6 +107,7 @@ function HentaiVN() {
             dateUpload
         }
     }
+   
     // Pages
     this.pageListParse = (document) => {
         const pages = [];
