@@ -1,10 +1,10 @@
 function NetTruyen() {
 
     this.name = "NetTruyen";
-    this.version = "0.0.3";
+    this.version = "0.0.4";
     this.thumbnail = "https://raw.githubusercontent.com/hajaulee/dotru-extensions/main/icon/nettruyen/icon.png";
     this.lang = "vi";
-    this.baseUrl = "http://www.nettruyengo.com";
+    this.baseUrl = "http://www.nettruyenin.com";
     this.supportsLatest = true;
   
     this.headerBuilder = () => {
