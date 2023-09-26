@@ -1,7 +1,7 @@
 function KimMiNa() {
 
     this.name = "KimMiNa";
-    this.version = "0.0.1";
+    this.version = "0.0.2";
     this.thumbnail = "https://kimminatt.com/wp-content/uploads/2023/02/logo.png";
     this.lang = "vi";
     this.baseUrl = "https://kimminatt.com";
@@ -20,7 +20,7 @@ function KimMiNa() {
     this.popularMangaSelector = () => "li.position-relative";
     this.popularMangaFromElement = (e) => {
         const url = e.querySelector("a").getAttribute("href");
-        const title = e.querySelector("img").getAttribute("alt").trim().replace("Truyên tranh", "");
+        const title = e.querySelector("img").getAttribute("alt").trim().replace("Truyện Tranh", "");
         const thumbnailUrl = imageOrNull(e.querySelector("img"));
         return {url, thumbnailUrl, title};
     }
@@ -139,9 +139,13 @@ function KimMiNa() {
     // sources sometimes have an image element with an empty attr that isn't really an image
     const imageOrNull = (element) => {
       let imgLink = element.getAttribute("data-cqmz2w");
-      imgLink = imgLink.replace(/CQMz2W/g, '.');
-	  imgLink = imgLink.replace(/8XZeZB/g, ':');
-	  imgLink = imgLink.replace(/5ABDqU/g, '/');
+      if (imgLink){
+      	imgLink = imgLink.replace(/CQMz2W/g, '.');
+	  	imgLink = imgLink.replace(/8XZeZB/g, ':');
+	  	imgLink = imgLink.replace(/5ABDqU/g, '/');
+	  } else {
+	  	imgLink = element.getAttribute("src")
+	  }
 	  console.log(imgLink)
       return imgLink;
     }
@@ -165,5 +169,4 @@ function KimMiNa() {
 		});
 		return decrypted.toString(CryptoJS.enc.Utf8);
 	}
-  
   }
