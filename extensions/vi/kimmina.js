@@ -1,7 +1,7 @@
 function KimMiNa() {
 
     this.name = "KimMiNa";
-    this.version = "0.0.2";
+    this.version = "0.0.3";
     this.thumbnail = "https://kimminatt.com/wp-content/uploads/2023/02/logo.png";
     this.lang = "vi";
     this.baseUrl = "https://kimminatt.com";
@@ -66,7 +66,7 @@ function KimMiNa() {
      }
   
     // Chapters
-    this.chapterListSelector = () => ".chapter-table tr:nth-child(n+2)";
+    this.chapterListSelector = () => ".chapter-table tbody tr";
     this.chapterFromElement = (element) => {
         const url = addHttpsSchema(element.querySelector("a")?.getAttribute("href"));
         const name = element.querySelector("a span:nth-child(1)")?.innerText?.trim();
